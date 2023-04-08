@@ -1,6 +1,6 @@
 <img src="https://github.com/JohnApCo/markdown-previewer/blob/main/public/img/Markdown-previewer.png?raw=true"></img>
 
-<h1 align="center">Random Quote Machine</h1>
+<h1 align="center">Markdown Previewer</h1>
 
 <div align="center">
   <h3>
