@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<img src="https://github.com/JohnApCo/markdown-previewer/blob/main/public/img/Markdown-previewer.png?raw=true"></img>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Random Quote Machine</h1>
 
-## Available Scripts
+<div align="center">
+  <h3>
+    <a href="https://codepen.io/JohnApCo/full/NWLEjwm" color="white">
+      Live
+    </a>
+   <span> | </span>
+    <a href="https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer">
+      Challenge
+    </a>
+  </h3>
+</div>
+<div align="center">
+   Solution for a challenge from  <a href="https://www.freecodecamp.org/" target="_blank">freecodecamp.org</a>.
+</div>
+<br>
+<br>
+<br>
 
-In the project directory, you can run:
+## About The Project
 
-### `yarn start`
+<p>This Markdown previewer app will be a great test of your CSS and JS skills especially. Markdown previewer is a simple react app which will contain a textarea for Markdown input and a preview tab where the converted text will appear..
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Users should be able to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p><strong>User Story #1:</strong> I can see a wrapper element with a corresponding <code>id="quote-box"</code>.</p>
+<p><strong>User Story #2:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="text"</code>.</p>
+<p><strong>User Story #3:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="author"</code>.</p>
+<p><strong>User Story #4:</strong> Within <code>#quote-box</code>, I can see a clickable element with a corresponding <code>id="new-quote"</code>.</p>
+<p><strong>User Story #5:</strong> Within <code>#quote-box</code>, I can see a clickable <code>a</code> element with a corresponding <code>id="tweet-quote"</code>.</p>
+<p><strong>User Story #6:</strong> On first load, my quote machine displays a random quote in the element with <code>id="text"</code>.</p>
+<p><strong>User Story #7:</strong> On first load, my quote machine displays the random quote's author in the element with <code>id="author"</code>.</p>
+<p><strong>User Story #8:</strong> When the <code>#new-quote</code> button is clicked, my quote machine should fetch a new quote and display it in the <code>#text</code> element.</p>
+<p><strong>User Story #9:</strong> My quote machine should fetch the new quote's author when the <code>#new-quote</code> button is clicked and display it in the <code>#author</code> element.</p>
+<p><strong>User Story #10:</strong> I can tweet the current quote by clicking on the <code>#tweet-quote</code> <code>a</code> element. This <code>a</code> element should include the <code>"twitter.com/intent/tweet"</code> path in its <code>href</code> attribute to tweet the current quote.</p>
+<p><strong>User Story #11:</strong> The <code>#quote-box</code> wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.</p>
 
-### `yarn test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flex
+- Grid
+- Desktop-first workflow
+- React
 
-### `yarn build`
+## What I learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I learned how to use a library to translate string to HTML. I also use hooks to control state in React. It turned out to be an amazing experience.
