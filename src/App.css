@@ -1,38 +1,292 @@
-.App {
-  text-align: center;
+/* ******************** Fluid Reset ******************** */
+:root {
+  --step--2: clamp(0.78rem, calc(0.79rem + -0.01vw), 0.79rem);
+  --step--1: clamp(0.89rem, calc(0.88rem + 0.05vw), 0.94rem);
+  --step-0: clamp(1rem, calc(0.98rem + 0.13vw), 1.13rem);
+  --step-1: clamp(1.13rem, calc(1.08rem + 0.23vw), 1.35rem);
+  --step-2: clamp(1.27rem, calc(1.19rem + 0.35vw), 1.62rem);
+  --step-3: clamp(1.42rem, calc(1.32rem + 0.52vw), 1.94rem);
+  --step-4: clamp(1.6rem, calc(1.46rem + 0.73vw), 2.33rem);
+  --step-5: clamp(1.8rem, calc(1.6rem + 1vw), 2.8rem);
+  --step-6: clamp(2.03rem, calc(1.76rem + 1.33vw), 3.36rem);
+}
+/* ******************** Custom Properties ******************** */
+:root {
+  --dark: #1f1f1f;
+  --always-dark: #1f1f1f;
+  --white: #fff;
+  --always-white: #fff;
+  --gray-light: #f2f2f2;
+  --always-gray-light: #f2f2f2;
+  --orange: #fb6d43;
+  --blue: #08c;
+  --text-color: #333;
+  --always-text-color: #333;
+  --font: "Raleway";
+  --container-lg: 1200px;
+  --container-md: 992px;
+  --container-sm: 780px;
+
+  --primary-main: #01adfc;
+  --primary-dark: #053b7a;
+  --gray-700: #424242;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root.dark-mode {
+  --dark: #fff;
+  --white: #1f1f1f;
+  --gray-light: #2f2f2f;
+  --text-color: #eee;
+}
+/* ******************** Reset CSS ******************** */
+html {
+  box-sizing: border-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--white);
+  font: 400 var(--step-0) / 1.6 var(--font), sans-serif;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ******************** Headings *********************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+
+h1,
+.fluid-5 {
+  font-size: var(--step-5);
+}
+
+h2,
+.fluid-4 {
+  font-size: var(--step-4);
+}
+
+h3,
+.fluid-3 {
+  font-size: var(--step-3);
+}
+
+h4,
+.fluid-2 {
+  font-size: var(--step-2);
+}
+
+h5,
+.fluid-1 {
+  font-size: var(--step-1);
+}
+
+h6,
+.fluid-0 {
+  font-size: var(--step-0);
+}
+/******************** App *********************/
+.App {
+  /* text-align: center; */
+  background-color: var(--blue);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: background-color 1s ease-out;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.window-open {
+  border: 1px solid var(--dark);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window {
+  border: 1px solid var(--dark);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding-bottom: 0;
+  background-color: lightblue;
+}
+
+.window-open > div {
+  width: var(--container-sm);
+  max-width: 95%;
+}
+.window-open .editor__textarea {
+  height: 80vh;
+  resize: none;
+}
+
+.window-open .preview__area {
+  height: 80vh;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.window__bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+}
+
+.window__title span {
+  margin-left: 0.5rem;
+}
+
+.window__buttons {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: auto;
+}
+
+.window__button {
+  background-color: transparent;
+  display: inline-block;
+  color: white;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  height: 100%;
+  /* width: 2rem; */
+}
+.window__button:hover {
+  background-color: rgba(125, 125, 125, 0.4);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.editor {
+  width: 40%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editor__textarea {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  outline: none;
+  margin-bottom: -8px;
+  resize: vertical;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  min-height: 15rem;
+  background-color: lightblue;
+}
+
+.preview {
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.preview__area {
+  min-height: 5rem;
+  padding: 0.5rem 1rem;
+}
+
+.preview h1 {
+  border-bottom: 2px solid #224b4b;
+}
+
+.preview h2 {
+  border-bottom: 1px solid #224b4b;
+}
+
+.preview code,
+.preview pre {
+  background-color: white;
+}
+
+.preview table {
+  border-collapse: collapse;
+}
+.preview th,
+.preview td {
+  border: 2px solid #224b4b;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+/* ******************** Utilities ******************** */
+
+.container-lg,
+.container-md,
+.container-sm {
+  padding-right: var(--step-1);
+  padding-left: var(--step-1);
+  margin-right: auto;
+  margin-left: auto;
+  width: var(--container-sm);
+  max-width: 95%;
+}
+
+.container-md {
+  width: var(--container-md);
+}
+
+.container-lg {
+  width: var(--container-lg);
 }
